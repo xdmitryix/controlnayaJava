@@ -8,6 +8,12 @@ public class AnimalList {
         this.animalsInZoo.add(newAnimal);
     }
 
+    public void showAll(){
+        for (Animal animalsInZoo: this.animalsInZoo){
+            System.out.println(animalsInZoo);
+        }
+    }
+
 
     
 }

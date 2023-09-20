@@ -4,10 +4,10 @@ public class Animal {
     private int id;
     private String name;
     private String typeAnimal;
-    private ArrayList <String> commandAnimal;
+    private String commandAnimal;
     private String birthAnimal;
 
-    public Animal(int id, String name, String typeAnimal, ArrayList <String> commandAnimal, String birthAnimal){
+    public Animal(int id, String name, String typeAnimal, String commandAnimal, String birthAnimal){
         this.id = id;
         this.name = name;
         this.typeAnimal = typeAnimal;
@@ -27,11 +27,11 @@ public class Animal {
         return typeAnimal;
     }
 
-    public ArrayList<String> getCommandAnimal() {
+    public String getCommandAnimal() {
         return commandAnimal;
     }
 
-    public void setCommandAnimal(ArrayList<String> commandAnimal) {
+    public void setCommandAnimal(String commandAnimal) {
         this.commandAnimal = commandAnimal;
     }
 
@@ -39,14 +39,21 @@ public class Animal {
         return birthAnimal;
     }
 
+    public void addCommand (String newCommand){
+        StringBuilder ComAdder = new StringBuilder();
+        ComAdder.append(commandAnimal)
+            .append(String.format(", %s", newCommand));
+        setCommandAnimal(ComAdder.toString());
+    }
+
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
         res.append(String.format("ID животного: %d\n", id))
                 .append(String.format("Имя животного: %s\n", name))
-                .append(String.format("Тип животного: %d\n", typeAnimal))
-                .append(String.format("Выученные команды: %d\n", commandAnimal))
-                .append(String.format("День рождения животного: %d\n", birthAnimal));
+                .append(String.format("Тип животного: %s\n", typeAnimal))
+                .append(String.format("Выученные команды: %s\n", commandAnimal))
+                .append(String.format("День рождения животного: %s\n", birthAnimal));
         return res.toString();
     }
 }
