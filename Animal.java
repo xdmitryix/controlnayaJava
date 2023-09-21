@@ -4,13 +4,15 @@ public class Animal {
     private int id;
     private String name;
     private String typeAnimal;
+    private String subspiceesOfAnimal;
     private String commandAnimal;
     private String birthAnimal;
 
-    public Animal(int id, String name, String typeAnimal, String commandAnimal, String birthAnimal){
+    public Animal(int id, String name, String typeAnimal, String subspiceesOfAnimal, String commandAnimal, String birthAnimal){
         this.id = id;
         this.name = name;
         this.typeAnimal = typeAnimal;
+        this.subspiceesOfAnimal = subspiceesOfAnimal;
         this.commandAnimal = commandAnimal;
         this.birthAnimal = birthAnimal;
     }
@@ -39,6 +41,10 @@ public class Animal {
         return birthAnimal;
     }
 
+    public String getSubspiceesOfAnimal() {
+        return subspiceesOfAnimal;
+    }
+
     public void addCommand (String newCommand){
         StringBuilder ComAdder = new StringBuilder();
         ComAdder.append(commandAnimal)
@@ -52,6 +58,7 @@ public class Animal {
         res.append(String.format("ID животного: %d\n", id))
                 .append(String.format("Имя животного: %s\n", name))
                 .append(String.format("Тип животного: %s\n", typeAnimal))
+                .append(String.format("Подвид животного животного: %s\n", subspiceesOfAnimal))
                 .append(String.format("Выученные команды: %s\n", commandAnimal))
                 .append(String.format("День рождения животного: %s\n", birthAnimal));
         return res.toString();
