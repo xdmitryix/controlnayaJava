@@ -17,6 +17,7 @@ public class Animal {
         this.birthAnimal = birthAnimal;
     }
 
+
     public int getId() {
         return id;
     }
@@ -58,7 +59,7 @@ public class Animal {
         res.append(String.format("ID животного: %d\n", id))
                 .append(String.format("Имя животного: %s\n", name))
                 .append(String.format("Тип животного: %s\n", typeAnimal))
-                .append(String.format("Подвид животного животного: %s\n", subspiceesOfAnimal))
+                .append(String.format("Подвид животного: %s\n", subspiceesOfAnimal))
                 .append(String.format("Выученные команды: %s\n", commandAnimal))
                 .append(String.format("День рождения животного: %s\n", birthAnimal));
         return res.toString();
