@@ -10,6 +10,7 @@ public class Program {
         animalList.addAnimal(new Hamster(7, "kuzia", "eat", "04-06-2022"));
         animalList.addAnimal(new Horse(8, "marusia", "go", "16-05-2014"));
         animalList.showAll();
+        animalList.searchAnimal(8);
         
     }
 }

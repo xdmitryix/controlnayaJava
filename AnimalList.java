@@ -14,6 +14,21 @@ public class AnimalList {
         }
     }
 
+    public void searchAnimal(Integer animalID){
+        int count = 0;
+        for (Animal animal : animalsInZoo) {
+            if (animalID.equals(animal.getId())) {
+                System.out.println("животное найдено!");
+                System.out.println(animal);
+                count ++;
+            }
+
+        }
+    if (count == 0) {
+        System.out.println("животного с таким ID нет в списке");
+        }
+    }
+
 
     
 }
