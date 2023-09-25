@@ -11,6 +11,10 @@ public class Program {
         animalList.addAnimal(new Horse(8, "marusia", "go", "16-05-2014"));
         animalList.showAll();
         animalList.searchAnimal(8);
+        System.out.println(animalList.getLastId());
+        animalList.animalConsoleAdd(animalList, animalList.getLastId()+1);
+        animalList.showAll();
+       
         
     }
 }
