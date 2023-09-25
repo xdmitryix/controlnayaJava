@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Program {
     public static void main(String[] args) {
         AnimalList animalList = new AnimalList();
@@ -9,11 +11,37 @@ public class Program {
         animalList.addAnimal(new Donkey(6, "ralph", "eat", "05-06-2015"));
         animalList.addAnimal(new Hamster(7, "kuzia", "eat", "04-06-2022"));
         animalList.addAnimal(new Horse(8, "marusia", "go", "16-05-2014"));
+        System.out.println("Начальный список животных в зоопарке:\n");
         animalList.showAll();
-        animalList.searchAnimal(8);
-        System.out.println(animalList.getLastId());
-        animalList.animalConsoleAdd(animalList, animalList.getLastId()+1);
-        animalList.showAll();
+        System.out.println("Список команд:\nshow-список животных\nadd-добавить новое животное\ncomshow-показать список команд\ncomadd-обучить животное новой команде\nexit-выход\nhelp-список команд\n");
+        while(true){
+            System.out.println("Введите команду: ");
+            Scanner iScanner = new Scanner(System.in);
+            String com = iScanner.nextLine();
+            if (com.toLowerCase().equals("show")) {
+                animalList.showAll();
+            }else{
+                if (com.toLowerCase().equals("add")){
+                    animalList.animalConsoleAdd(animalList, animalList.getLastId()+1);
+                }else{
+                    if (com.toLowerCase().equals("exit")){
+                        break;
+                    }else{
+                        if (com.toLowerCase().equals("help")){
+                            System.out.println("Список команд:\nshow-список животных\nadd-добавить новое животное\ncomshow-показать список команд\ncomadd-обучить животное новой команде\nexit-выход\nhelp-список команд\n");
+                        }else{
+                            if (com.toLowerCase().equals("comshow")) {
+                                animalList.showAnimalCommand();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+ 
+        // animalList.searchAnimal(8);
+        // System.out.println(animalList.getLastId())
+
        
         
     }

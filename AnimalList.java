@@ -19,15 +19,18 @@ public class AnimalList {
         return animalsInZoo.size();
     }
 
-    public void searchAnimal(Integer animalID){
+    public void showAnimalCommand(){
+        Scanner iScanner = new Scanner(System.in); 
+        System.out.println("Введите ID животного");
+        Integer animalID = iScanner.nextInt();
         int count = 0;
         for (Animal animal : animalsInZoo) {
             if (animalID.equals(animal.getId())) {
-                System.out.println("животное найдено!");
-                System.out.println(animal);
+                System.out.println("Выученные команды данного животного");
+                System.out.println(animal.getCommandAnimal());
                 count ++;
+                break;
             }
-
         }
     if (count == 0) {
         System.out.println("животного с таким ID нет в списке");
