@@ -32,17 +32,19 @@ public class Program {
                         }else{
                             if (com.toLowerCase().equals("comshow")) {
                                 animalList.showAnimalCommand();
+                            }else{
+                                if (com.toLowerCase().equals("comadd")){
+                                    animalList.CommandNewAdd();
+                                }else{
+                                    System.out.println("Команда не найдена. Попробуйте другую команду.");
+                                }
                             }
                         }
                     }
                 }
             }
         }
- 
-        // animalList.searchAnimal(8);
-        // System.out.println(animalList.getLastId())
 
-       
         
     }
 }

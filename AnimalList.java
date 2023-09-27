@@ -37,6 +37,21 @@ public class AnimalList {
         }
     }
 
+    public void CommandNewAdd(){
+        Scanner iScanner = new Scanner(System.in); 
+        Scanner iScanner2 = new Scanner(System.in); 
+        System.out.println("Введите ID животного для обучения новой команде:");
+        Integer animalID = iScanner.nextInt();
+        int count = 0;
+        for (Animal animal : animalsInZoo) {
+            if (animalID.equals(animal.getId())) {
+                System.out.println("введите новую команду для животного:");
+                String commandNew = iScanner2.nextLine(); 
+                animal.setCommandAnimal(animal.getCommandAnimal() + ", " + commandNew);
+            }
+        }
+    }
+
     public void animalConsoleAdd(AnimalList listOfAnimal, int id){
         Scanner iScanner = new Scanner(System.in); 
         System.out.println("Введите вид животного: Dog, Cat, Horse, Hamster, Donkey или Camel.");
