@@ -24,16 +24,18 @@ public class AnimalList {
         Scanner iScanner = new Scanner(System.in); 
         System.out.println("Введите ID животного:");
         Integer animalID = iScanner.nextInt();
-        for (Animal animal : animalsInZoo) {
-            if (animalID.equals(animal.getId())) {
-                System.out.println("Выученные команды данного животного:");
-                System.out.println(animal.getCommandAnimal());
-                break;
+        if (animalID < 1 || animalID > getLastId()) {
+        System.out.println("Животного с таким ID нет в списке.");
+        }else{
+            for (Animal animal : animalsInZoo) {
+                if (animalID.equals(animal.getId())) {
+                    System.out.println("Выученные команды данного животного:");
+                    System.out.println(animal.getCommandAnimal());
+                    break;
+                }
             }
         }
-    if (animalID < 1 || animalID > getLastId()) {
-        System.out.println("Животного с таким ID нет в списке.");
-        }
+
     }
 
     public void CommandNewAdd(){
@@ -41,19 +43,23 @@ public class AnimalList {
         Scanner iScanner2 = new Scanner(System.in, "Cp866"); 
         System.out.println("Введите ID животного для обучения новой команде:");
         Integer animalID = iScanner.nextInt();
-        int count = 0;
-        for (Animal animal : animalsInZoo) {
-            if (animalID.equals(animal.getId())) {
-                System.out.println("введите новую команду для животного:");
-                String commandNew = iScanner2.nextLine(); 
-                animal.setCommandAnimal(animal.getCommandAnimal() + ", " + commandNew);
+        if (animalID < 1 || animalID > getLastId()) {
+            System.out.println("Животного с таким ID нет в списке.");
+        }else{
+            for (Animal animal : animalsInZoo) {
+                if (animalID.equals(animal.getId())) {
+                    System.out.println("введите новую команду для животного:");
+                    String commandNew = iScanner2.nextLine(); 
+                    animal.setCommandAnimal(animal.getCommandAnimal() + ", " + commandNew);
+                    System.out.println("Животное успешно обучено команде!");
+                }
             }
         }
     }
 
     public void animalConsoleAdd(AnimalList listOfAnimal, int id){
         Boolean flag = true;
-        Scanner iScanner = new Scanner(System.in); 
+        Scanner iScanner = new Scanner(System.in, "Cp866"); 
         System.out.println("Введите вид животного: Dog, Cat, Horse, Hamster, Donkey или Camel.");
         String typyAnimal = iScanner.nextLine();
         System.out.println("Введите имя животного: ");

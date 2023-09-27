@@ -33,7 +33,6 @@ public class Program {
                             }else{
                                 if (com.toLowerCase().equals("comadd")){
                                     animalList.CommandNewAdd();
-                                    System.out.println("Животное успешно обучено команде!");
                                 }else{
                                     System.out.println("Команда не найдена. Попробуйте другую команду.");
                                 }
