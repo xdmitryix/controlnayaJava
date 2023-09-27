@@ -21,25 +21,23 @@ public class AnimalList {
 
     public void showAnimalCommand(){
         Scanner iScanner = new Scanner(System.in); 
-        System.out.println("Введите ID животного");
+        System.out.println("Введите ID животного:");
         Integer animalID = iScanner.nextInt();
-        int count = 0;
         for (Animal animal : animalsInZoo) {
             if (animalID.equals(animal.getId())) {
-                System.out.println("Выученные команды данного животного");
+                System.out.println("Выученные команды данного животного:");
                 System.out.println(animal.getCommandAnimal());
-                count ++;
                 break;
             }
         }
-    if (count == 0) {
-        System.out.println("животного с таким ID нет в списке");
+    if (animalID < 1 || animalID > getLastId()) {
+        System.out.println("Животного с таким ID нет в списке.");
         }
     }
 
     public void CommandNewAdd(){
-        Scanner iScanner = new Scanner(System.in); 
-        Scanner iScanner2 = new Scanner(System.in); 
+        Scanner iScanner = new Scanner(System.in, "Cp866"); 
+        Scanner iScanner2 = new Scanner(System.in, "Cp866"); 
         System.out.println("Введите ID животного для обучения новой команде:");
         Integer animalID = iScanner.nextInt();
         int count = 0;
