@@ -20,8 +20,7 @@ public class Program {
                 animalList.showAll();
             }else{
                 if (com.toLowerCase().equals("add")){
-                    animalList.animalConsoleAdd(animalList, animalList.getLastId()+1);
-                    System.out.println("Новое животное успешно добавлено в зоопарк!");
+                    animalList.animalConsoleAdd(animalList, animalList.getLastId()+1);                   
                 }else{
                     if (com.toLowerCase().equals("exit")){
                         break;
